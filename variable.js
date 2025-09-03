@@ -1,7 +1,9 @@
 console.log('Hello, World!'); 
 
 /*
-    Variable adalah tempat untuk menyimpan data.
+    VARIABLE
+    
+    Merupakan tempat untuk menyimpan data.
 
     Syntax:
     var nama_variable = nilai_variable;
