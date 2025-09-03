@@ -1,7 +1,5 @@
 Hello, Students Purwadhika! 👋☺️😉
 
-Hello, Full Stack Students✌️!
-
 ✔️Conditional Statement
 
 Conditional statement digunakan untuk menjalankan kode tertentu berdasarkan suatu kondisi.
