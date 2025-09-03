@@ -1,4 +1,6 @@
 /*
+    METHOD
+    
     Method adalah fungsi bawaan Javascript untuk mempermudah kita dalam memanipulasi data.
 */
 
