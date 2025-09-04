@@ -1,130 +1,51 @@
 Hello, Students Purwadhika! 👋☺️😉
 
-✔️Array
+✔️Introduction to Typescript
 
-Array adalah struktur data yang digunakan untuk menyimpan sekumpulan data (nilai) dalam satu variable.
-Tiap nilai yang disimpan didalam array disebut dengan `element` atau `item`. Dan tiap-tiap `element`
-atau `item` didalam array dapat diakses dengan menggunakan index penomoran yang dimulai dari 0.
+TypeScript adalah bahasa pemrograman open-source yang dikembangkan oleh Microsoft. TypeScript merupakan superset dari JavaScript, yang artinya semua kode JavaScript adalah kode TypeScript. Tetapi TypeScript sendiri menambahkan fitur tambahan seperti static typing.
 
-💡Case:
-Kita memiliki list data student. Tanpa menggunakan array, code untuk menyimpan list data student tersebut menjadi
-seperti ini:
+❓Mengapa menggunakan Typescript?
 
-    let student1 = 'Bobby';
-    let student2 = 'Immanuel';
-    let student3 = 'Aviawan';
+    ▪️Type Safety
+        TypeScript membantu mendeteksi kesalahan sebelum runtime, seperti kesalahan penulisan properti atau pemanggilan fungsi dengan parameter yang salah.
 
-Dengan menggunakan array, maka kita hanya perlu membuat 1 variable yang berisikan 3 list students didalamnya:
+        Contoh:
 
-    let students = ['Bobby', 'Immanuel', 'Aviawan'];
+            function greet(name: string) {
+                console.log(`Hello, ${name}`);
+            }
 
-    🔹Array Declaration
+            greet(42); // ❌ Error: Argument of type 'string' is not assignable to parameter of type 'number'.
 
-        let fruits = ['Apple', 'Mango', 'Orange'];
+    ▪️Deteksi Error Lebih Dini
+        Banyak bug bisa dicegah sejak proses penulisan kode, bukan saat aplikasi sudah dijalankan di produksi.
 
-    🔹Accessing Array
+        Contoh:
 
-        fruits[0] // Apple
-        fruits[1] // Mango
-        fruits[2] // Orange
-
-    🔹Update Item in Array
-
-        fruits[0] = 'Pineaple' // Apple ➡️ Pineaple
-
-    🔹Delete Item in Array
-
-        delete fruits[1]
-
-✔️Destructuring Array
-
-Fitur yang memungkinkan untuk mengambil item dari dalam array dan menyimpannya ke dalam masing-masing variable.
-Bisa dilihat dari contoh berikut:
-
-    const fruits = ['Apple', 'Mango', 'Orange']
-    const fruit1 = fruits[0];
-    const fruit2 = fruits[1];
-    const fruit3 = fruits[2];
-
-Alih-alih seperti cara diatas, kita bisa persingkat dengan menggunakan destructure array sebagai berikut:
-
-    ✅ Destructure semua item
-
-    const fruits = ['Apple', 'Mango', 'Orange']
-    const [fruit1, fruit2, fruit3] = fruits;
-
-    console.log(fruit1) // Apple
-    console.log(fruit2) // Mango
-    console.log(fruit3) // Orange
-
-    ___ or ___
-
-    ✅ Destructure item `Apple` dan `Mango`
-
-    const fruits = ['Apple', 'Mango', 'Orange']
-    const [fruit1, fruit2] = fruits;
-
-    console.log(fruit1) // Apple
-    console.log(fruit2) // Mango
-
-    ___ or ____
-
-    ✅ Destructure item `Orange` saja
-
-    const fruits = ['Apple', 'Mango', 'Orange']
-    const [, , fruit] = fruits;
-
-    console.log(fruit) // Orange
-
-Dengan destructure array, maka:
-
-▪️Code jadi lebih ringkas dan mudah dibaca.
-
-▪️Bisa digunakan untuk mengambil sebagian nilai saja.
-
-✔️Function
-
-Function merupakan salah 1 fitur didalam bahasa pemrograman yang berfungsi untuk memuat
-block of code kita sehingga dapat digunakan berulang kali. Function dapat mempermudah pemrograman, karena:
-
-▪️Code jadi lebih rapi dan modular
-
-▪️Menghindari penulisan code yang sama berulang-ulang
-
-▪️Mempermudah debugging
-
-    🔹Function Types
-
-        ▪️Declarative Function
-
-            function functionName(){
-                blockOfCode;
+            type Product = {
+                id: number;
+                name: string;
             };
 
-            functionName()
-
-        ▪️Function Expression
-
-            const functionName = functionName(){
-                blockOfCode;
+            const product: Product = {
+                id: 123,
+                name: "Laptop",
+                // price: 2000, ❌ Error jika menambahkan properti yang tidak didefinisikan di dalam `type Product`
             };
 
-            functionName()
+⌨️Instalasi Typescript
 
-        ▪️Arrow Function
+    ▪️Buat folder baru ➡️ Install packages berikut didalam folder tersebut
 
-            const functionName = () => {
-                blockOfCode;
-            };
+        npm i -g typescript ts-node
 
-            functionName()
+        tsc --init
 
-    🔹Function with Parameters & Function with Default Parameters
+    ▪️Setup `tsconfig.json`, dan uncomment code berikut:
 
-        function Greeting(name, hobby){
-            return `Hello, Iam ${name} and my hobby is ${hobby}`;
-        };
+        "rootDir": "./src",
+        "outDir": "./bundle",
 
-        function Greeting(name = 'Student', hobby = 'Coding'){
-            return `Hello, Iam ${name} and my hobby is ${hobby}`;
-        };
+    ▪️Running program
+
+        ts-node filename.ts
